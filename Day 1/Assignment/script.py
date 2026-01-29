@@ -72,7 +72,7 @@ def script():
             print("Error in creating virtual enviroment", e)
         print("virtual Environment Created!!")
 
-        # 2. Determine the path to the venv's Python binary
+        # 2. find path venv's Python binary
         venv_python = os.path.join(".venv", "bin", "python3")
 
         # 3. Use the venv's own python to install requirements
