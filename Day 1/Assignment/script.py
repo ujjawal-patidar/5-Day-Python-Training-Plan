@@ -64,7 +64,7 @@ def script():
         # print("Requirement Installed")
 
 
-        # 1. Create the virtual environment
+        # create the virtual environment
         print("Creating virtual Environment......")
         try:
             subprocess.run([sys.executable, "-m", "venv", ".venv"], check=True)
@@ -72,12 +72,12 @@ def script():
             print("Error in creating virtual enviroment", e)
         print("virtual Environment Created!!")
 
-        # 2. find path venv's Python binary
+        # find path venv's Python binary
         venv_python = os.path.join(".venv", "bin", "python3")
 
-        # 3. Use the venv's own python to install requirements
-        # (This is the equivalent of activating + installing)
-        
+        # Use the venv's own python to install requirements,
+        # whrn we activate the venv basically the path in the os enviroment changed to our full_path/.venv/bin/python3 interpreter therefore all the dependencieds then starts to install in the venv folder
+        # (ye basically of activating + installing)
         print("Installing all the requirements......")
         try:
             subprocess.run([venv_python, "-m", "pip","install", "-r","requirements.txt"], check=True)
